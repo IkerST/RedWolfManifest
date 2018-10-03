@@ -49,7 +49,7 @@ build_device () {
 		simplepush $key $device "Build Started"
 	fi
 	(
-	breakfast $device
+	breakfast $device && \
 	make -j$THREADS recoveryimage
 	) && (
 	echo "===================================================="
@@ -88,19 +88,19 @@ error () {
 
 # Start script
 (
-install_repo
-figlet "Red Wolf Recovery"
-echo "Syncing RedWolfRecovery Sources (rw_n)"
-repo init --depth=1 -u git://github.com/RedWolfRecovery/rw_manifest.git -b rw-n
-mkdir .repo/local_manifests/ && cp redwolf.xml .repo/local_manifests/
-repo_sync
-echo "Starting Build"
-source build/envsetup.sh
-build_device harpia
-build_device merlin
-build_device osprey
-build_device surnia
-build_device lux
+install_repo && \
+figlet "Red Wolf Recovery" && \
+echo "Syncing RedWolfRecovery Sources (rw_n)" && \
+repo init --depth=1 -u git://github.com/RedWolfRecovery/rw_manifest.git -b rw-n && \
+mkdir .repo/local_manifests/ && cp redwolf.xml .repo/local_manifests/ && \
+repo_sync && \
+echo "Starting Build" && \
+source build/envsetup.sh && \
+build_device harpia && \
+build_device merlin && \
+build_device osprey && \
+build_device surnia && \
+build_device lux && \
 tree out/target/product/
 ) || ( error )
 
