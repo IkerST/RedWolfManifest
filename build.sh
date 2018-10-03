@@ -73,19 +73,11 @@ build_device () {
 	)
 }
 
-dir_init () { 
-	mkdir $1 && cd $1
-}
-
-dir_rm () { 
-	cd .. && rm -rf $1
-}
-
 # End functions
 
 # Start script
 
-dir_init 1
+figlet "RedWolfRecovery"
 echo "Syncing RedWolfRecovery Sources (rw_n)"
 repo init --depth=1 -u git://github.com/RedWolfRecovery/rw_manifest.git -b rw-n
 mkdir .repo/local_manifests/ && cp redwolf.xml .repo/local_manifests/
