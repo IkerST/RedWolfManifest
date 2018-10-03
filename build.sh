@@ -88,5 +88,6 @@ build_device merlin
 build_device osprey
 build_device surnia
 build_device lux
+tree out/target/product/
 
 # Finish script
