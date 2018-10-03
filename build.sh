@@ -80,10 +80,14 @@ install_repo () {
 	alias repo="~/bin/repo"
 }
 
+error () { 
+	return 1
+}
+
 # End functions
 
 # Start script
-
+(
 install_repo
 figlet "Red Wolf Recovery"
 echo "Syncing RedWolfRecovery Sources (rw_n)"
@@ -98,5 +102,6 @@ build_device osprey
 build_device surnia
 build_device lux
 tree out/target/product/
+) || ( error )
 
 # Finish script
