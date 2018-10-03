@@ -8,5 +8,4 @@
 	<project name="sultanqasim/android_device_motorola_merlin" path="device/motorola/merlin" remote="github" revision="twrp" />
 	<project name="sultanqasim/android_device_motorola_lux" path="device/motorola/lux" remote="github" revision="twrp" />
 	<project name="sultanqasim/android_kernel_motorola_msm8916" path="kernel/motorola/msm8916" remote="github" revision="squid_nougat" />
-	<project name="LineageOS/android_device_qcom_common" path="device/qcom/common" remote="github" revision="cm-14.1" />
 </manifest>
