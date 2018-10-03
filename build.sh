@@ -73,10 +73,18 @@ build_device () {
 	)
 }
 
+install_repo () {
+	mkdir ~/bin
+	curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+	chmod a+x ~/bin/repo
+	alias repo="~/bin/repo"
+}
+
 # End functions
 
 # Start script
 
+install_repo
 figlet "Red Wolf Recovery"
 echo "Syncing RedWolfRecovery Sources (rw_n)"
 repo init --depth=1 -u git://github.com/RedWolfRecovery/rw_manifest.git -b rw-n
