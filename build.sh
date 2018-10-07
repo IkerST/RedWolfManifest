@@ -19,7 +19,7 @@ repo_sync () {
 	elif [ "$notif" == "simplepush" ]; then
 		simplepush $key "Repo" "Sync Started"
 	fi
-	repo sync -c -j12 && (
+	repo sync -c -j12 -q && (
 	echo "===================================================="
 	echo "===================Sync Finished===================="
 	echo "===================================================="
