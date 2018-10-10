@@ -8,5 +8,7 @@
 	<project name="sultanqasim/android_device_motorola_merlin" path="device/motorola/merlin" remote="github" revision="twrp" />
 	<project name="sultanqasim/android_device_motorola_lux" path="device/motorola/lux" remote="github" revision="twrp" />
 	<project name="sultanqasim/android_kernel_motorola_msm8916" path="kernel/motorola/msm8916" remote="github" revision="squid_nougat" />
-	<project path="prebuilts/gcc/linux-x86/arm/arm-eabi-4.9" name="Akianonymus/Linaro-arm" revision="4.9" remote="github" />
+	
+	<!-- Linaro 7.3 kernel toolchain -->
+	<project name="dev-harsh1998/GCC_BUILDS" path="prebuilts/gcc/linux-x86/arm/arm-eabi-7.3" remote="github" revision="master" />
 </manifest>
