@@ -84,6 +84,12 @@ error () {
 	return 1
 }
 
+
+toolchain_install () {
+	wget https://releases.linaro.org/components/toolchain/binaries/latest-7/arm-linux-gnueabihf/gcc-linaro-7.3.1-2018.05-x86_64_arm-linux-gnueabihf.tar.xz
+	tar xvf gcc-linaro-7.3.1-2018.05-x86_64_arm-linux-gnueabihf.tar.xz
+	export CROSS_COMPILE=$(pwd)/gcc-linaro-7.3.1-2018.05-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf- 
+}
 # End functions
 
 # Start script
@@ -96,6 +102,7 @@ tar xvf repo.tar && \
 mkdir .repo/local_manifests/ && cp redwolf.xml .repo/local_manifests/ && \
 repo_sync && \
 echo "Starting Build" && \
+toolchain_install && \
 source build/envsetup.sh && \
 build_device harpia && \
 build_device merlin && \
