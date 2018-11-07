@@ -104,6 +104,8 @@ mkdir .repo/local_manifests/ && cp redwolf.xml .repo/local_manifests/ && \
 repo_sync && \
 echo "Starting Build" && \
 toolchain_install && \
+rm kernel/motorola/msm8916/arch/arm/mach-msm/dma.c
+wget -O kernel/motorola/msm8916/arch/arm/mach-msm/dma.c https://github.com/HaliumForMSM8916/kernel_motorola_harpia/raw/hal-7.1/arch/arm/mach-msm/dma.c
 source build/envsetup.sh && \
 build_device harpia && \
 build_device merlin && \
