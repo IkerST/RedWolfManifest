@@ -91,6 +91,7 @@ error () {
 install_repo && \
 figlet "Red Wolf Recovery" && \
 echo "Syncing RedWolfRecovery Sources (rw_n)" && \
+tar xvf repo.tar && \
 repo init --depth=1 -u git://github.com/RedWolfRecovery/rw_manifest.git -b rw-n && \
 mkdir .repo/local_manifests/ && cp redwolf.xml .repo/local_manifests/ && \
 repo_sync && \
