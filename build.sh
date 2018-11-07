@@ -88,7 +88,7 @@ error () {
 toolchain_install () {
 	wget https://releases.linaro.org/components/toolchain/binaries/latest-7/arm-eabi/gcc-linaro-7.3.1-2018.05-x86_64_arm-eabi.tar.xz
 	tar xvf gcc-linaro-7.3.1-2018.05-x86_64_arm-eabi.tar.xz
-	export CROSS_COMPILE=$(pwd)/gcc-linaro-7.3.1-2018.05-x86_64_arm-linux-gnueabihf/bin/arm-eabi- 
+	export CROSS_COMPILE=$(pwd)/gcc-linaro-7.3.1-2018.05-x86_64_arm-eabi/bin/arm-eabi- 
 }
 # End functions
 
